@@ -1,0 +1,21 @@
+{
+    "name": "your-server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "apollo-server-express": "^3.13.0",
+        "bcrypt": "^5.1.1",
+        "bcryptjs": "^2.4.3",
+        "express": "^4.18.2",
+        "gql": "^1.1.2",
+        "graphql": "^15.6.0",
+        "mongoose": "^8.0.2"
+    }
+}
