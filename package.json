@@ -2,9 +2,13 @@
   "name": "your-app-name",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "server": "cd server && npm start"
+    "start-server": "node server/server.js",
+    "start-client": "echo 'Client not yet implemented'",
+    "start": "npm run start-server && npm run start-client",
+    "seed": "node server/scripts/seed.js",
+    "clean": "node server/scripts/cleandb.js"
   },
   "keywords": [],
   "author": "",

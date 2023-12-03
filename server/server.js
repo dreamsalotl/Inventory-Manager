@@ -4,6 +4,7 @@ const cors = require('cors');
 const { typeDefs: UserTypeDefs, resolvers: UserResolvers } = require('./gql/User');
 const { typeDefs: PartTypeDefs, resolvers: PartResolvers } = require('./gql/Part');
 const { typeDefs: UnitTypeDefs, resolvers: UnitResolvers } = require('./gql/Unit');
+const { typeDefs: SupplierTypeDefs, resolvers: SupplierResolvers } = require('./gql/Supplier');
 const db = require('./config/connection');
 
 const app = express();
@@ -17,11 +18,13 @@ const server = new ApolloServer({
     ${UserTypeDefs}
     ${PartTypeDefs}
     ${UnitTypeDefs}
+    ${SupplierTypeDefs}
   `,
   resolvers: [
     UserResolvers,
     PartResolvers,
     UnitResolvers,
+    SupplierResolvers,
   ],
 });
 

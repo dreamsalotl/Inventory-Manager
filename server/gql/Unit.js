@@ -1,4 +1,6 @@
 const { gql } = require('apollo-server-express');
+const UnitModel = require('../models/UnitModel');
+const PartModel = require('../models/PartModel');
 
 const typeDefs = gql`
   type Unit {
@@ -21,16 +23,16 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
-    units: async (_, __, { dataSources }) => {
-      return dataSources.unitAPI.getUnits();
+    units: async () => {
+      return UnitModel.getUnits();
     },
-    unit: async (_, { id }, { dataSources }) => {
-      return dataSources.unitAPI.getUnitById(id);
+    unit: async (_, { id }) => {
+      return UnitModel.getUnitById(id);
     },
   },
   Unit: {
-    parts: async (unit, _, { dataSources }) => {
-      return dataSources.partAPI.getPartsByIds(unit.partIds);
+    parts: async (unit) => {
+      return PartModel.getPartsByIds(unit.partIds);
     },
   },
 };

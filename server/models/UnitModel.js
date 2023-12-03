@@ -7,4 +7,12 @@ const unitSchema = new mongoose.Schema({
 
 const UnitModel = mongoose.model('Unit', unitSchema);
 
+UnitModel.getUnits = function() {
+  return this.find({});
+};
+
+UnitModel.getUnitById = function(id) {
+  return this.findById(id);
+};
+
 module.exports = UnitModel;
